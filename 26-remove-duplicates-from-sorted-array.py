@@ -14,6 +14,7 @@
 #
 # Time  O(n)
 # Space O(1)
+# hint: use index and i as two pointers, and add new elements to front of list in place
 
 
 class Solution(object):
