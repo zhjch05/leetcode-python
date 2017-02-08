@@ -1,19 +1,24 @@
-# Jincheng Zhang 1/26/2017
-# https://leetcode.com/problems/search-in-rotated-sorted-array/
+# !!!not tested yet
 #
+# Jincheng Zhang 1/26/2017
+# https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
+#
+# Follow up for "Search in Rotated Sorted Array":
+# What if duplicates are allowed?
+#
+# Would this affect the run-time complexity? How and why?
 # Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
 #
 # (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
 #
-# You are given a target value to search. If found in the array return its index, otherwise return -1.
+# Write a function to determine if a given target is in the array.
 #
-# You may assume no duplicate exists in the array.
+# The array may contain duplicates.
 #
 #
-#
-# Time  O(log(n))
+# Time  O(n)
 # Space O(1)
-# hint: binary search with a turning point
+# hint: binary search with a turning point, linear search when list is not growing
 
 
 class Solution(object):
@@ -29,7 +34,7 @@ class Solution(object):
             m = int((l+r)/2)
             if target == nums[m]:
                 return m
-            if nums[m] >= nums[l]:
+            if nums[m] > nums[l]:
                 if target < nums[m] and target >= nums[l]:
                     r = m
                 else:
